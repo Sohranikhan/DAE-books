@@ -1,0 +1,926 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <link rel="php" href="plugin.php">
+  <style>
+  *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  body{
+    width: 100%;
+    margin: 0 auto;
+  }
+  html{
+    scroll-behavior: smooth;
+  }
+    #chcol {
+      width: 100%;
+      height: 500px;
+      background: linear-gradient(to top left, #d000e3,#00d6d6);
+      
+    }
+/*background
+  background: linear-gradient(to top left, #d000e3,#00d6d6);
+}*/
+ .full ol {
+      display: flex;
+width: 100%;
+    }
+
+   .full ul {
+     
+      display: flex;
+      flex-direction: column;
+      transition: 1s;
+      
+    }
+.active::active{
+  color: rgb(17,118,68);
+}
+  .full li {
+      display: flex;
+      margin: 10px auto;
+      text-decoration: none;
+      height: 30px;
+      transition: 1s;
+      align-items: center;
+    }
+   .full li a{
+      text-decoration: none;
+      color: darkred;
+      align-items: center;
+      font-weight: 500;
+      color: white;
+    }
+.full{
+  width: 99.2%;
+  height: 50px;
+  box-shadow: 1px 1px 2px black;
+  display: flex;
+background: radial-gradient(to top , #1f71ff,#860dff);
+  justify-content: space-between;
+border-radius:5px ;
+}
+    #opt{
+      width: 100px;
+      
+      display: none;
+      z-index: 2;
+      background: rgba(0, 0, 0, 0.7) ;
+      border-radius: 0 0 5px 5px;
+    }
+    #opt li {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+   
+     
+    }
+    .logo{
+      margin: 3px 1px 5px 10px;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+     
+    }
+    .logocod{
+      display: flex;
+      align-items: center;
+      color: white;
+      margin: auto 90px 0 0;
+      
+    }
+    #Red{
+      margin: 3px 1px 5px 10px;
+      width: 150px;
+      height: 75px;
+    }
+    .sp{
+      margin-right: 5px;
+      transform: rotate(90deg);
+    }
+    .heading{
+      width: 100%;
+      height: 450px;
+      display: flex;
+     
+      align-items: center;
+      justify-content: center;
+    text-align: center;
+    color: white;
+    }
+  
+.heading h1{
+  margin-bottom: 10px;
+}
+.heading button{
+  border: none;
+  width: auto;
+  padding:0px 10px;
+  height: 35px;
+  margin: 5px 10px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background: #ff0066;
+  outline: none;
+  box-shadow: 0px 1px 8px antiquewhite;
+  font-size: 16px;
+  font-weight: 400;
+  color: whitesmoke;
+}
+.heading button:hover{
+  background: whitesmoke;
+  color: #ff0066;
+ 
+}
+.bur{
+  width: 35px;
+  height: 4px;
+  background: white;
+  margin: 3px;
+  border-radius: 14px;
+}
+.all{
+  display: flex;
+  flex-direction: column;
+  margin: auto 5px;
+}
+#colcode{
+  margin-top: 19px;
+}
+#colcd{
+  margin-top: 3px;
+}
+#label{
+  margin: 19px 89px 0 0;
+}
+#getcol{
+  width: 120px;
+  height: 40px;
+  margin-top: 13px;
+  border: none;
+}
+#sidenav{
+  width: 50%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background: linear-gradient(to top left, #d000e3,#00d6d6);
+  padding:5% 0 10% 5px;
+  display: none;
+  border-radius: 10px 0 0 10px;
+  animation: goto 0.51s ease;
+  
+}
+
+  #password {
+    width: 100%;
+    height: auto;
+    display: flex;
+   flex-direction: column;
+    
+       align-items: center;
+       justify-content: center;
+    background: linear-gradient(to top left, #d000e3, #00ffff);
+  }
+ #demo{
+       align-items: center;
+       justify-content: space-evenly;
+      display: flex;
+      flex-direction: column;
+       color: white;
+       width: 80%;
+       height: 100px;
+       border-radius: 5px;
+       padding: 0 0 0 3px;
+      background: crimson;
+     }
+     #passhtml{
+       width: 100%;
+       height: 50px;
+       text-align: center;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+      user-select: all;
+       color:white;
+       background: red;
+       border-radius: 5px;
+     }
+     #butpass{
+       width: 160px;
+       height: 40px;
+       border: none;
+       border-radius: 25px;
+       background: white;
+       color: black;
+       margin: 10px 1px;
+       outline: none;
+       font-weight: 600;
+       font-size: 15px;
+       box-shadow: 1.3px 2.2px 1px black;
+     }
+     #butpass:hover{
+       box-shadow: 1.3px -2.2px 1px black;
+        
+          background: red;
+          color: white;
+          width: 200px;
+          transition: 1s;
+          word-spacing: 5px;
+letter-spacing: 1px;
+font-weight: 700;
+     }
+     #passhead{
+       font-size: 45px;
+       text-align:center;
+       width: auto;
+       height: auto;
+       border-radius: 20px 10px;
+      
+      
+       color: white;
+       margin: 2px 0;
+     }
+     #passhead:hover{
+       background: red;
+       color: white;
+       width: 120px;
+       transition: 1s;
+     }
+       .wrtcode {
+         
+         color: navy;
+     width: 90%;
+     height: 400px;
+     overflow: scroll;
+     user-select: all;
+     padding: 0 20px;
+     background:white;
+     border-radius:5px;
+       }
+@keyframes goto{
+  0%{
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+#sideflex a{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  width: 120px;
+  height: 45px;
+text-align: end;
+font-size: 19px;
+font-weight: 500;
+  color: white;
+  text-decoration: none;
+  padding: 25px 0;
+ 
+}
+#hid{
+  position: absolute;
+top: 5px;
+right: 5px;
+  }
+  #hid h4{
+    color: wheat;
+    text-decoration: underline;
+  }
+  
+ #sideflex{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   margin:10% 0;
+   padding: 17% 0;
+ }
+ #flec , #flec1{
+   margin: 0 auto;
+ }
+@media (max-width:600px){
+  #olist{
+    display: none;
+  }
+.logo{
+  margin: 0px 0 3px 0;
+}
+.heading{
+  font-size: 17px;
+ display: flex;
+ flex-direction: column;
+}
+}
+@media (min-width:600px){
+  .all{
+    display: none;
+  }
+}
+  </style>
+</head>
+<body>
+  <div id="chcol" onmouseover="hide()" >
+    <div class="full">
+     <h2 class="logocod"> <img src="Red.png" class="logo">Codin</h2>
+
+      <ol style="color: white;" id="olist" onmouseout="hide()">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">Java</a></li>
+        <li><a href="#">Python</a></li>
+        <ul id="ulist">
+          <li onclick="dop()"><a href="#"><span class="sp"> > </span> JavaScript</a></li>
+          <div id="opt">
+            <li><a href="#">React js</a></li>
+            <li><a href="#">Angular js</a></li>
+            <li><a href="#">VUE js</a></li>
+          </div>
+        </ul>
+               <li><a href="#">PHP</a></li>
+                <li><a href="#">Express js</a></li>
+               
+      </ol>
+      
+      <div class="all"onclick="show()" >
+           <div class="bur"></div>
+           <div class="bur"></div>
+           <div class="bur"></div>
+      </div>
+   
+  
+   
+    </div>
+    
+     <div id="sidenav">
+    <div id="hid" onclick="hidenav()">
+     <h4>Close</h4>
+    </div>
+    <div id="sideflex">
+      
+         <a href="#" class="active">Home</a>
+         <a href="#">Java</a>
+         <a href="#">Python</a>
+         
+           <a href="#">JavaScript</a>
+           
+             <a href="#">React js</a>
+             <a href="#">Angular js</a>
+             <a href="#">VUE js</a>
+        
+         
+         <a href="#">PHP</a>
+         <a href="#">Express js</a>
+       </ol>
+       </div>
+     </div>
+   <div class="heading">
+     <div id="flec1">
+       
+    <h1 id="passhead">Asalamualaikum! My Dear <br>Brothers.</h1>
+     
+       
+                 <h3>Change Theme</h3>
+              
+                
+      
+       
+        <input type="color"id="getcol" name="color">
+         <button onclick="change()" onclick="getc()"id="butcol"
+>Change</button>
+                         
+        
+  </div>  
+                <div id="flec">
+                   
+
+      
+ <label for="colcode"id="colcode">For Developers 👍</label>
+ <h3 id="colcd" name="colcode"style="user-select: all;" onclick="cop()">linear-gradient(to bottom right,#d000e3,#f05429)</h3>
+  <label for="colcode"id="colcode">For Beginners 😍</label>
+ <h3 id="colcodeb" style="user-select: all;">#f05429</h3>
+  </div>
+   </div>
+   <section id="password">
+     <h1 id="passhead">2</h1>
+      <div id="demo">
+     <h3>Create strong password: </h3>
+     <h3 id="passhtml">Ad?7Rz@1Yw!8</h3>   </div>
+     <button onclick="showpasshole()"id="butpass">Show Password</button>
+<h3 style="color: whitesmoke;margin:10px 0;">index.html</h3>
+ <h4 id="codehtml" class="wrtcode"></h4>
+ <h3 style="color: whitesmoke;margin:10px 0;">Style.css</h3>
+ <h4 id="codecss" class="wrtcode"></h4>
+  <h3 style="color: whitesmoke;margin:10px 0;">script.js</h3>
+  <h4 id="codejs" class="downcode"></h4>
+  <a href="script.js.txt"download="download" style="width: 200px;height: 250px;background: white;border-radius: 5px;text-decoration: none;display: flex;
+  flex-direction: column;
+  align-items: center;justify-content: center;font-size: 45px;color: rebeccapurple" >js.txt</a>
+   </section>
+  <script>
+  let colcda= document.querySelector('#colcode');
+  let colda= document.querySelector('#colcd');
+  function cop(){
+    colcda.select();
+    document.execCommand('copy');
+  }
+  function change() {
+let col=document.querySelector("#chcol");
+      document.querySelector('#colcd').innerHTML=`linear-gradient(to top left, #d000e3,${getc()})`;
+    let cop = document.querySelector('#colcodeb').innerHTML=getc();
+    
+      }
+  function hide() {
+      document.querySelector('#opt').style.display = 'none';
+      document.querySelector('.sp').style.transform='rotate(90deg)'
+    }
+    function dop() {
+      document.querySelector('#opt').style.display = 'block';
+      document.querySelector('.sp').style.transform='rotate(0deg)'
+    }
+   function getc(){
+     let coll=document.querySelector('#getcol').value;
+     let col=document.querySelector("#chcol").style.background = `linear-gradient(to bottom right ,#d000e3,${coll})`;
+     
+     
+     
+     return coll;
+   }
+   function show(){
+    let side= document.querySelector('#sidenav').style.display='block';
+    side.style.transition='1s';
+   }
+   function hidenav(){
+let sidenav=document.querySelector('#sidenav');
+sidenav.style.display='none';
+
+   }
+   function shli(){
+     document.querySelector('#opt1').style.display='block';
+   }
+   let alfa = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+     
+      let small = "abcdefghijklmnopqrstuvwxyz";
+      let symb = "/)(+-&_$#@?!;:";
+      let num = "0123456789";
+      const getranddata = (dataset)=>{
+        return dataset[Math.floor(Math.random()*dataset.length)];
+      }
+      const showpass=()=>{
+        let a=getranddata(alfa);
+        let b=getranddata(small);
+        let c= getranddata(symb);
+        let d= getranddata(num);
+        let holepass=`${a}${b}${c}${d}`;
+        return holepass;
+      }
+     const showpasshole = ()=>{
+     document.querySelector('#passhtml').innerHTML= showpass() + showpass()+ showpass();}
+     document.querySelector('#codehtml').innerText= " \n\n"+` <!DOCTYPE html>
+     <html lang="en">
+     
+     <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+       <meta http-equiv="X-UA-Compatible" content="ie=edge">
+       <title>My Simple Projects</title>
+     </head>
+<body>
+  <div id="chcol" onmouseover="hide()" >
+    <div class="full">
+     <h2 class="logocod"> <img src="Red.png" class="logo">Codin</h2>
+
+      <ol style="color: white;" id="olist" onmouseout="hide()">
+        <li><a href="#" class="active">Home</a></li>
+        <li><a href="#">Java</a></li>
+        <li><a href="#">Python</a></li>
+        <ul id="ulist">
+          <li onclick="dop()"><a href="#"><span class="sp"> > </span> JavaScript</a></li>
+          <div id="opt">
+            <li><a href="#">React js</a></li>
+            <li><a href="#">Angular js</a></li>
+            <li><a href="#">VUE js</a></li>
+          </div>
+        </ul>
+               <li><a href="#">PHP</a></li>
+                <li><a href="#">Express js</a></li>
+               
+      </ol>
+      
+      <div class="all"onclick="show()" >
+           <div class="bur"></div>
+           <div class="bur"></div>
+           <div class="bur"></div>
+      </div>
+   
+  
+   
+    </div>
+    
+     <div id="sidenav">
+    <div id="hid" onclick="hidenav()">
+     <h4>Close</h4>
+    </div>
+    <div id="sideflex">
+      
+         <a href="#" class="active">Home</a>
+         <a href="#">Java</a>
+         <a href="#">Python</a>
+         
+           <a href="#">JavaScript</a>
+           
+             <a href="#">React js</a>
+             <a href="#">Angular js</a>
+             <a href="#">VUE js</a>
+        
+         
+         <a href="#">PHP</a>
+         <a href="#">Express js</a>
+       </ol>
+       </div>
+     </div>
+   <div class="heading">
+     <h1>Asalamualaikum! My Dear <br>Brothers.</h1>
+       <h1 id="passhead">1</h1>
+                 <h3>Change Theme</h3>
+       <label for="color"id="label">Select Color</label>
+       <div id ="butcha">  
+      
+       
+        <input type="color"id="getcol" name="color">
+         <button onclick="change()" onclick="getc()">Change</button>
+        </div>
+
+ <label for="colcode"id="colcode">For Developers 👍</label>
+ <h3 id="colcd" name="colcode"style="user-select: all;" onclick="cop()">linear-gradient(to bottom right,#d000e3,#f05429)</h3>
+  <label for="colcode"id="colcode">For Beginners 😍</label>
+ <h3 id="colcodeb" style="user-select: all;">#f05429</h3>
+ 
+   </div>
+   <section id="password">
+     <h1 id="passhead">2</h1>
+      <div id="demo">
+     <h3>Create strong password: </h3>
+     <h3 id="passhtml">Ad?7Rz@1Yw!8</h3>   </div>
+     <button onclick="showpasshole()"id="butpass">Show Password</button>
+<h3 style="color: gold;">index.html</h3>
+ <h4 id="codehtml" class="wrtcode"></h4>
+ <h3 style="color: gold;">Style.css</h3>
+ <h4 id="codecss" class="wrtcode"></h4>
+   </section>
+   </body>
+   
+   </html>`;
+   
+     document.querySelector('#codecss').innerText= " \n\n"+` *{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  }
+  body{
+    width: 100%;
+    margin: 0 auto;
+  }
+  html{
+    scroll-behavior: smooth;
+  }
+    #chcol {
+      width: 100%;
+      height: 500px;
+      background: linear-gradient(to top left, #d000e3,#00d6d6);
+      
+    }
+/*background
+  background: linear-gradient(to top left, #d000e3,#00d6d6);
+}*/
+ .full ol {
+      display: flex;
+width: 100%;
+    }
+
+   .full ul {
+     
+      display: flex;
+      flex-direction: column;
+      transition: 1s;
+      
+    }
+.active::active{
+  color: rgb(17,118,68);
+}
+  .full li {
+      display: flex;
+      margin: 10px auto;
+      text-decoration: none;
+      height: 30px;
+      transition: 1s;
+      align-items: center;
+    }
+   .full li a{
+      text-decoration: none;
+      color: darkred;
+      align-items: center;
+      font-weight: 500;
+      color: white;
+    }
+.full{
+  width: 99.2%;
+  height: 50px;
+  box-shadow: 1px 1px 2px black;
+  display: flex;
+background: radial-gradient(to top , #1f71ff,#860dff);
+  justify-content: space-between;
+border-radius:5px ;
+}
+    #opt{
+      width: 100px;
+      
+      display: none;
+      z-index: 2;
+      background: rgba(0, 0, 0, 0.7) ;
+      border-radius: 0 0 5px 5px;
+    }
+    #opt li {
+     display: flex;
+     flex-direction: column;
+     align-items: center;
+     justify-content: center;
+   
+     
+    }
+    .logo{
+      margin: 3px 1px 5px 10px;
+      width: 45px;
+      height: 45px;
+      border-radius: 50%;
+     
+    }
+    .logocod{
+      display: flex;
+      align-items: center;
+      color: white;
+      margin: auto 90px 0 0;
+      
+    }
+    #Red{
+      margin: 3px 1px 5px 10px;
+      width: 150px;
+      height: 75px;
+    }
+    .sp{
+      margin-right: 5px;
+      transform: rotate(90deg);
+    }
+    .heading{
+      width: 100%;
+      height: 450px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    text-align: center;
+    color: white;
+    }
+  
+.heading h1{
+  margin-bottom: 10px;
+}
+.heading button{
+  border: none;
+  width: auto;
+  padding:0px 10px;
+  height: 35px;
+  margin: 5px 10px;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  background: #ff0066;
+  outline: none;
+  box-shadow: 0px 1px 8px antiquewhite;
+  font-size: 16px;
+  font-weight: 400;
+  color: whitesmoke;
+}
+.heading button:hover{
+  background: whitesmoke;
+  color: #ff0066;
+}
+.bur{
+  width: 35px;
+  height: 4px;
+  background: white;
+  margin: 3px;
+  border-radius: 14px;
+}
+.all{
+  display: flex;
+  flex-direction: column;
+  margin: auto 5px;
+}
+#colcode{
+  margin-top: 19px;
+}
+#colcd{
+  margin-top: 3px;
+}
+#label{
+  margin: 19px 89px 0 0;
+}
+#getcol{
+  width: 120px;
+  height: 40px;
+  margin-top: 3px;
+  border: none;
+}
+#butcha{
+  display: flex;
+
+}
+#sidenav{
+  width: 50%;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+  background: linear-gradient(to top left, #d000e3,#00d6d6);
+  padding:5% 0 10% 5px;
+  display: none;
+  border-radius: 10px 0 0 10px;
+  animation: goto 0.51s ease;
+  
+}
+  #password {
+    width: 100%;
+    height: auto;
+    display: flex;
+   flex-direction: column;
+    
+       align-items: center;
+       justify-content: center;
+    background: linear-gradient(to top left, #d000e3, #00ffff);
+  }
+ #demo{
+       align-items: center;
+       justify-content: space-evenly;
+      display: flex;
+      flex-direction: column;
+       color: white;
+       width: 80%;
+       height: 100px;
+       border-radius: 5px;
+       padding: 0 0 0 3px;
+      background: crimson;
+     }
+     #passhtml{
+       width: 100%;
+       height: 50px;
+       text-align: center;
+       display: flex;
+       align-items: center;
+       justify-content: center;
+       user-select:all;
+       color:white;
+       background: red;
+       border-radius: 5px;
+     }
+     #butpass{
+       width: 160px;
+       height: 40px;
+       border: none;
+       border-radius: 25px;
+       background: white;
+       color: black;
+       margin: 10px 1px;
+       outline: none;
+       font-weight: 600;
+       font-size: 15px;
+       box-shadow: 1.3px 2.2px 1px darkblue;
+     }
+     #butpass:hover{
+       box-shadow: 1.3px -2.2px 1px darkblue;
+        
+          background: red;
+          color: white;
+          width: 200px;
+          transition: 1s;
+          word-spacing: 5px;
+letter-spacing: 1px;
+font-weight: 700;
+     }
+     #passhead{
+       font-size: 45px;
+       text-align:center
+       ;width: 60px;
+       height: 50px;
+       border-radius: 20% 10%;
+       background: white;
+       color: black;
+       margin: 2px 0;
+     }
+     #passhead:hover{
+       background: red;
+       color: white;
+       width: 85px;
+       transition: 1s;
+     }
+@keyframes goto{
+  0%{
+    transform: translateX(100%);
+  }
+  100% {
+    transform: translateX(0%);
+  }
+}
+#sideflex a{
+  display: flex;
+  flex-direction: column;
+  align-items: start;
+  justify-content: center;
+  width: 120px;
+  height: 45px;
+text-align: end;
+font-size: 19px;
+font-weight: 500;
+  color: white;
+  text-decoration: none;
+  padding: 25px 0;
+ 
+}
+#hid{
+  position: absolute;
+top: 5px;
+right: 5px;
+  }
+  #hid h4{
+    color: wheat;
+    text-decoration: underline;
+  }
+  table{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 2px solid black;
+  }
+ #row{
+    width: 100%;
+  background: gold;
+    padding: 5px;
+    margin:0 auto;
+  }
+ #row td{
+   width:100%;
+   margin: 0px auto;
+ }
+ #sideflex{
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   justify-content: center;
+   margin:10% 0;
+   padding: 17% 0;
+ }
+@media (max-width:600px){
+  #olist{
+    display: none;
+  }
+.logo{
+  margin: 0px 0 3px 0;
+}
+.heading{
+  font-size: 17px;
+ 
+}
+}
+@media (min-width:600px){
+  .all{
+    display: none;
+  }
+}`;
+
+  </script>
+</body>
+
+</html>
